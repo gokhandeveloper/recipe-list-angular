@@ -10,18 +10,11 @@
 <hr>
 <div class="row">
   <div class="col-xs-12">
-    <a href="#" class="list-group-item clearfix"
-    *ngFor="let recipe of recipes"
+    <app-recipe-item
+      *ngFor="let recipeElement of recipes"
+    [recipe]="recipeElement"
+      (recipeSelected)="onRecipeSelected(recipeElement)"
     >
-      <div class="float-start">
-        <h4 class="list-group-item-heading">{{recipe.name}}</h4>
-        <p class="list-group-item-text">{{recipe.description}}</p>
-      </div>
-      <span class="float-end">
-        <img class="img-fluid" src="{{recipe.imagePath}}" style="max-height:50px;">
-      </span>
-    </a>
-
-    <app-recipe-item></app-recipe-item>
+    </app-recipe-item>
   </div>
 </div>
