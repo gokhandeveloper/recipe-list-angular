@@ -14,4 +14,12 @@ export class RecipeDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  something() {
+    console.log("hi")
+  }
+
+  onClick() {
+
+
+  }
 }
