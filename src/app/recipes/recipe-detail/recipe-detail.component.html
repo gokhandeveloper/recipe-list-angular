@@ -1,5 +1,3 @@
-<p>recipe-detail works!</p>
-
 <div class="row">
 
   <img src="{{recipe.imagePath}}" alt="" class="img-fluid" style="max-width: 200px">
@@ -13,7 +11,7 @@
       <span class="visually-hidden">Toggle Dropdown</span>
     </button>
     <ul  class="dropdown-menu">
-      <li><a href="#"> To shopping list</a></li>
+      <li><a (click)=onAddToShoppingList()>Add to shopping list</a></li>
       <li><a href="#">Edit recipe</a></li>
       <li><a href="#"> Delete recipe</a></li>
     </ul>
@@ -25,7 +23,9 @@
     </div>
   <div class="row">
     <div class="col-xs-12">
-      Ingredients
+      <li *ngFor="let ingredient of recipe.ingredients">
+        {{ingredient.name}} --{{ingredient.amount}}
+      </li>
     </div>
   </div>
 </div>
